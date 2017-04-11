@@ -1,6 +1,6 @@
 'use strict'; // Mode to ensure good testing
 
-describe('Airport', function() {
+describe('Feature test', function() {
   var airport;
   var plane;
 
@@ -9,8 +9,8 @@ describe('Airport', function() {
     plane = new Plane();
   });
 
-    it('land planes', function() {
-    airport.land(plane);
-    expect(airport.airplanes).toContain(plane);
+    it('planes can land', function() {
+    plane.land(airport);
+    expect(airport.planes()).toContain(plane);
   });
 });

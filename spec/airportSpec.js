@@ -1,23 +1,19 @@
+
 'use strict';
 
 describe('Airport', function() {
   var airport;
+  var plane;
+
   beforeEach(function() {
     airport = new Airport();
-    plane = jasmine.createSpyObj('plane');
+    plane = jasmine.createSpy('plane', ['land']);
   });
-
-  it('instructs plane to land', function() {
-    expect(airport.land(plane)).toHaveBeenCalledWith(plane);
+  it('has no planes by default', function() {
+    expect(airport.planes()).toEqual([]);
+  });
+  it('clears planes for landing', function() {
+    airport.land(plane);
+    expect(airport.planes()).toEqual([plane]);
   });
 });
-
-
-
-
-  // describe('initialize', function() {
-  //   it('with empty array', function() {
-  //     expect(airport.airplanes).toEqual([]);
-  //   });
-  // });
-  //
