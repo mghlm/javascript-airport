@@ -1,3 +1,5 @@
-var Airport = function() {
-  this.airplanes = []
-};
+'use strict';
+
+function Airport(){}
+
+Airport.prototype.land = function(){ return []; };
